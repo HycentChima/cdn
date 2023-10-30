@@ -3,10 +3,10 @@
     <head>
         <title>Lagendary Arena - Larena</title>
         <meta meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-        <link rel="icon" href="../cdn/img/ohycent.png" type="image/png">
-        <link rel="stylesheet" type="text/css" href="../cdn/css/larena.css">
-        <script src="../cdn/js/bowinc-ui.js"></script>
-        <script src="../cdn/js/bowinc-web3.js"></script>
+        <link rel="icon" href="/aohycent.png" type="image/png">
+        <link rel="stylesheet" type="text/css" href="./css/larena.css">
+        <script src="./js/bowinc-ui.js"></script>
+        <script src="./js/bowinc-web3.js"></script>
     </head>
     <body>
         <nav title="Larena Navigation Bar">
@@ -33,7 +33,7 @@
         </taskbar>
         <script type="text/javascript">
             var avm = window.avm=function(){};
-            var notice = window.notice=function(){};
+            var notice = {};
             notice.title = "Untitled";
             notice.body = "Hello AVM is now live go check it out ";
             notice.icon = "./ohycent.png";
@@ -55,21 +55,20 @@
                 amfm = avm.dom.querySelector("#avmFrameMain");
                 ri = avm.dom.querySelector("#amItSh");
                 rii = avm.dom.querySelector("#amItShTg");
-                rl = encodeURI(ri.value);
-                ra = bowinc.base58encode(rl);
-                amfm.src=rl;
-                ri.value=rl;
+                
+                ra = bowinc.base58encode(ri.value);
+                amfm.src=ri.value;
+                ri.value=ri.value;
                 rii.value=ra;
             };
 
             avm.searchSubmit = function(){
                 amfm = avm.dom.querySelector("#avmFrameMain");
                 ri = avm.dom.querySelector("#amItSh");
-                rii = avm.dom.querySelector("#amItShTg");
-                rl = encodeURI(ri.value);
+                rii = avm.dom.querySelector("#amItShT");
                 ra = bowinc.base58decode(ri.value);
                 amfm.src=ra;
-                ri.value=ra;
+                ri.value=ri.value;
                 rii.value=ra;
             };
 
