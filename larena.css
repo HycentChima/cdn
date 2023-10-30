@@ -1,0 +1,245 @@
+@charset "UTF-8";
+:root {
+  --avm-css-color: #aa4400;
+  --avm-css-text: #000000;
+  --avm-css-link: #00ff00;
+  --avm-css-white: #fff;
+  --avm-css-black: #000;
+  --avm-css-red: #dc3545;
+  --avm-css-blue: #0d6efd;
+  --avm-css-green: #198754;
+  --avm-css-yellow: #ffc107;
+  --avm-css-orange: #fd7e14;
+  --avm-css-pink: #d63384;
+  --avm-css-purple: #6f42c1;
+  --avm-css-teal: #20c997;
+  --avm-css-cyan: #0dcaf0;
+  --avm-css-indigo: #6610f2;
+  --avm-css-gray: #6c757d;
+  --avm-css-gray-dark: #343a40;
+  --avm-css-light: #f8f9fa;
+  --avm-css-dark: #212529;
+  --avm-css-dark-light: #071c4d;
+  --avm-css-dark-soft: #c9c7f7;
+  --avm-css-dark-dark: #010e2b;
+  --avm-css-primary: #0d6efd;
+  --avm-css-primary-light: #3a75ff;
+  --avm-css-primary-soft: #ceddff;
+  --avm-css-primary-dark: #0048f0;
+  --avm-css-secondary: #6c757d;
+  --avm-css-secondary-light: #dcdcdf;
+  --avm-css-secondary-dark: #d6d5e1;
+  --avm-css-success: #198754;
+  --avm-css-success-light: #82d6bc;
+  --avm-css-success-soft: #def4ed;
+  --avm-css-success-dark: #3cb690;
+  --avm-css-info: #0dcaf0;
+  --avm-css-info-light: #83cbff;
+  --avm-css-info-soft: #dcf0ff;
+  --avm-css-info-dark: #1d9fff;
+  --avm-css-warning: #ffc107;
+  --avm-css-warning-light: #ffcf70;
+  --avm-css-warning-soft: #fff2d8;
+  --avm-css-warning-dark: #fba700;
+  --avm-css-danger: #dc3545;
+  --avm-css-danger-light: #f68692;
+  --avm-css-danger-soft: #fcdde1;
+  --avm-css-danger-dark: #ee283c;
+
+  --avm-css-taskbar: repeating-linear-gradient(90deg,red,blue,green);
+  --avm-css-gradient: linear-gradient(90deg,rgba(0, 0, 0, 99),rgba(1, 100, 1, 2.6),rgba(0, 0, 0, 99));
+  --avm-css-bg: linear-gradient(to left, #e0eafc,#cfdef3);
+
+  --avm-font:'Roboto',sans-serif;
+  --avm-font-monospace: 'Poppins', sans-serif;
+  --avm-font-sans-serif: 'Open Sans', sans-serif;
+  --avm-font-monospace-a: SFMono-Regular, Menlo, Monaco, Consolas,"Liberation Mono", "Courier New", monospace;
+  --avm-font-sans-serif-a: system-ui, -apple-system, "Segoe UI", Roboto,"Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  
+  --avm-image-icon: url("data:image/vnd.microsoft.icon;base64,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");
+}
+
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+}
+*,::after,::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+avm{
+    scroll-behavior: smooth;
+}
+avm,
+body {
+    padding: 0;
+    margin: 0;
+}
+body {
+    user-select: none;
+    background: var(--avm-css-bg);
+    font-family: var(--avm-font-monospace);
+    -webkit-text-size-adjust: 20%;
+    -webkit-tap-highlight-color: var(--avm-css-gradient);
+    -webkit-font-smoothing: antialiased;
+}
+
+body::-webkit-scrollbar {
+  width: 4px;
+}
+body::-webkit-scrollbar-track {
+  background: var(--avm-css-taskbar);
+  cursor: pointer;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: green;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+.no-drag-down-reload{
+    overscroll-behavior-y: contain;
+}
+
+nav {
+    top: 0;
+    position: static;
+    background-color: #f1f1f1;
+    font: var(--avm-font-monospace-a);
+    font-size: 0.10em;
+    box-shadow: -2px 3px 10px navy;
+    padding: 0.3vh;
+    margin: 0.1vh;
+    width: 100vw;
+    height: 4vh;
+    z-index: 4444;
+}
+.avn-nav-search {
+    height: 35px;
+    width: 48%;
+    margin-right: 10px;
+}
+.logo_icon {
+    height: 15px !important;
+    width: 15px !important;
+}
+
+#avmIcon {
+    position: fixed;
+    padding: 2em;
+    margin: 0.001em;
+    bottom: 0;
+    left: 0;
+    background: var(--avm-image-icon) center;
+    background-repeat: no-repeat;
+    z-index: 9998;
+}
+#avmFrameMain {
+    object-fit: scale-down;
+    top: 0;
+    border: 0;
+    margin-bottom: 0.5em;
+    width: 100vw;
+    height: 90vh;
+    background: var(--avm-css-bg);
+}
+taskbar{
+    position: fixed;
+    object-position: center;
+    height: 8vh;
+    width: 100%;
+    bottom: 0;
+    padding: 0.5rem;
+    box-shadow: 2px -3px 10px navy;
+    background: var(--avm-css-taskbar);
+    z-index: 9998;
+}
+taskbar button {
+    float: center;
+    border-radius: 5px;
+    max-height: 25em;
+    max-width: 25em;
+    padding: 0.5rem;
+    text-shadow: 1px 1px whitesmoke;
+}
+embed{
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background: var(--avm-icon);
+}
+.packet {
+    max-height: auto;
+    padding: 3px;
+    margin: 3px;
+    border: 2px dotted;
+    border-color: maroon;
+}
+.text-center{
+    text-align: center !important;
+}
+.horiz {
+    max-width: 50%;
+    border: 1px dotted;
+    border-color: maroon;
+    display: flex;
+    position: relative;
+}
+.varti {
+    max-width: 50vw;
+    border: 1px dotted;
+    border-color: var(--avm-css-label);
+}
+.dropdown-toggle:focus {
+    outline:0
+}
+.pright {
+    position: absolute;
+    text-align: right;
+    right: 0;
+}
+.pleft {
+    position: relative;
+    text-align: left;
+    left: 0;
+}
+.screen{
+    height: 100%;
+    width: 100%;
+}
+.h100 {
+    height: 100%;
+}
+.hero {
+    background-color: #393939;
+    color: white;
+    border-radius: 8px;
+    font: monospace;
+    font-size: 1em;
+    width: 48%;
+    height: 180px;
+    margin-left: 10px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: -2px 1px 2px gray;
+}
+.applet{
+    padding: 1em;
+    height: auto;
+    width: auto;
+    border-radius: 4em;
+    background: var(--avm-css-bg);
+    box-shadow: -3px 2px 1px gray;
+}
+.widget{
+    width: 12rem;
+    height: 12rem;
+    border: 0px;
+}

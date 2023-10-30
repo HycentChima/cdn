@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<avm>
+    <head>
+        <title>Lagendary Arena - Larena</title>
+        <meta meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+        <link rel="icon" href="../cdn/img/ohycent.png" type="image/png">
+        <link rel="stylesheet" type="text/css" href="../cdn/css/larena.css">
+        <script src="../cdn/js/bowinc-ui.js"></script>
+        <script src="../cdn/js/bowinc-web3.js"></script>
+    </head>
+    <body>
+        <nav title="Larena Navigation Bar">
+            <div>
+                <mark id="debuger" class=""></mark>
+                <form id="avmFormSearch" action="" method="post">
+                <input type="text" name="avmInputSearchTag" id="amItShTg" placeholder="No active Dapp">
+                    <input type="text" name="avmInputSearch" id="amItSh" placeholder="Search bowchain or enter address">
+                    <input type="button" onclick="javascript: avm.submitSearch()" value="GO">
+                    <input type="button" onclick="javascript: avm.searchSubmit()" value="Come">
+                </form>
+        
+            </div>
+            <!--<div>
+                <input type="text" name="avmSearchOutput" id="amOtSh" placeholder="No active Dapp">
+            </div>-->
+        </nav>
+        <screen id="bowLarenaViewMain">
+            <iframe src="data:text/html;base64,PGNlbnRlcj5MZWdlbmRhcnkgQXJlbmEgPHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2IiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxNiIgZGF0YS12aWV3LWNvbXBvbmVudD0idHJ1ZSIgY2xhc3M9Im9jdGljb24gb2N0aWNvbi12ZXJpZmllZCBtci0yIj48cGF0aCBzdHlsZT0iZmlsbDojMDA5OTAwIiBkPSJtOS41ODUuNTIuOTI5LjY4Yy4xNTMuMTEyLjMzMS4xODYuNTE4LjIxNWwxLjEzOC4xNzVhMi42NzggMi42NzggMCAwIDEgMi4yNCAyLjI0bC4xNzQgMS4xMzljLjAyOS4xODcuMTAzLjM2NS4yMTUuNTE4bC42OC45MjhhMi42NzcgMi42NzcgMCAwIDEgMCAzLjE3bC0uNjguOTI4YTEuMTc0IDEuMTc0IDAgMCAwLS4yMTUuNTE4bC0uMTc1IDEuMTM4YTIuNjc4IDIuNjc4IDAgMCAxLTIuMjQxIDIuMjQxbC0xLjEzOC4xNzVhMS4xNyAxLjE3IDAgMCAwLS41MTguMjE1bC0uOTI4LjY4YTIuNjc3IDIuNjc3IDAgMCAxLTMuMTcgMGwtLjkyOC0uNjhhMS4xNzQgMS4xNzQgMCAwIDAtLjUxOC0uMjE1TDMuODMgMTQuNDFhMi42NzggMi42NzggMCAwIDEtMi4yNC0yLjI0bC0uMTc1LTEuMTM4YTEuMTcgMS4xNyAwIDAgMC0uMjE1LS41MThsLS42OC0uOTI4YTIuNjc3IDIuNjc3IDAgMCAxIDAtMy4xN2wuNjgtLjkyOGMuMTEyLS4xNTMuMTg2LS4zMzEuMjE1LS41MThsLjE3NS0xLjE0YTIuNjc4IDIuNjc4IDAgMCAxIDIuMjQtMi4yNGwxLjEzOS0uMTc1Yy4xODctLjAyOS4zNjUtLjEwMy41MTgtLjIxNWwuOTI4LS42OGEyLjY3NyAyLjY3NyAwIDAgMSAzLjE3IDBaTTcuMzAzIDEuNzI4bC0uOTI3LjY4YTIuNjcgMi42NyAwIDAgMS0xLjE4LjQ4OWwtMS4xMzcuMTc0YTEuMTc5IDEuMTc5IDAgMCAwLS45ODcuOTg3bC0uMTc0IDEuMTM2YTIuNjc3IDIuNjc3IDAgMCAxLS40ODkgMS4xOGwtLjY4LjkyOGExLjE4IDEuMTggMCAwIDAgMCAxLjM5NGwuNjguOTI3Yy4yNTYuMzQ4LjQyNC43NTMuNDg5IDEuMThsLjE3NCAxLjEzN2MuMDc4LjUwOS40NzguOTA5Ljk4Ny45ODdsMS4xMzYuMTc0YTIuNjcgMi42NyAwIDAgMSAxLjE4LjQ4OWwuOTI4LjY4Yy40MTQuMzA1Ljk3OS4zMDUgMS4zOTQgMGwuOTI3LS42OGEyLjY3IDIuNjcgMCAwIDEgMS4xOC0uNDg5bDEuMTM3LS4xNzRhMS4xOCAxLjE4IDAgMCAwIC45ODctLjk4N2wuMTc0LTEuMTM2YTIuNjcgMi42NyAwIDAgMSAuNDg5LTEuMThsLjY4LS45MjhhMS4xNzYgMS4xNzYgMCAwIDAgMC0xLjM5NGwtLjY4LS45MjdhMi42ODYgMi42ODYgMCAwIDEtLjQ4OS0xLjE4bC0uMTc0LTEuMTM3YTEuMTc5IDEuMTc5IDAgMCAwLS45ODctLjk4N2wtMS4xMzYtLjE3NGEyLjY3NyAyLjY3NyAwIDAgMS0xLjE4LS40ODlsLS45MjgtLjY4YTEuMTc2IDEuMTc2IDAgMCAwLTEuMzk0IDBaTTExLjI4IDYuNzhsLTMuNzUgMy43NWEuNzUuNzUgMCAwIDEtMS4wNiAwTDQuNzIgOC43OGEuNzUxLjc1MSAwIDAgMSAuMDE4LTEuMDQyLjc1MS43NTEgMCAwIDEgMS4wNDItLjAxOEw3IDguOTRsMy4yMi0zLjIyYS43NTEuNzUxIDAgMCAxIDEuMDQyLjAxOC43NTEuNzUxIDAgMCAxIC4wMTggMS4wNDJaIj48L3BhdGg+PC9zdmc+PC9jZW50ZXI+ICAg" name="afovirtual" id="avmFrameMain"></iframe>
+        </screen>
+        <taskbar class="text-center">
+            <button onclick="javascript: avm.sendNotify(avm.notice);">&#128172;</button>
+            <button id="ctlF12"><a href="/" target="afovirtual">&#127918;</a></button>          
+        </taskbar>
+        <script type="text/javascript">
+            var avm = window.avm=function(){};
+            var notice = window.notice=function(){};
+            notice.title = "Untitled";
+            notice.body = "Hello AVM is now live go check it out ";
+            notice.icon = "./ohycent.png";
+            notice.tag = "avm";
+            notice.timeout = '5000';
+            notice.link = "https://aonyex.africa";
+
+            avm.address = "aohycent.ntf";
+            avm.ip = "127.0.0.1";
+            avm.port = "3666";
+            avm.dom = window.document;
+            
+            var bLViewMain = document.getElementById("bowLarenaViewMain");
+            avm.browser= document.querySelector("#avmFormSearch");
+
+            avm.localhost = "/afocha/.avm/BOWINC.txt";
+
+            avm.submitSearch = function(){
+                amfm = avm.dom.querySelector("#avmFrameMain");
+                ri = avm.dom.querySelector("#amItSh");
+                rii = avm.dom.querySelector("#amItShTg");
+                rl = encodeURI(ri.value);
+                ra = bowinc.base58encode(rl);
+                amfm.src=rl;
+                ri.value=rl;
+                rii.value=ra;
+            };
+
+            avm.searchSubmit = function(){
+                amfm = avm.dom.querySelector("#avmFrameMain");
+                ri = avm.dom.querySelector("#amItSh");
+                rii = avm.dom.querySelector("#amItShTg");
+                rl = encodeURI(ri.value);
+                ra = bowinc.base58decode(ri.value);
+                amfm.src=ra;
+                ri.value=ra;
+                rii.value=ra;
+            };
+
+            avm.getTimeStampId = function() {
+                r = new Date().getTime();
+                return r.toString(16);
+            };
+            
+            avm.sendNotify = function(content) {
+                if (!bowinc.isArray(content)) {
+                    return false;
+                }
+                //BowNotify.Permission.request();
+                BowNotify.create(content.title,{
+                    body: content.body,
+                    icon: content.icon,
+                    tag: content.tag,
+                    id: content.id??avm.getTimeStampId(),
+                    timeout: content.timeout,
+                    vibrate: [100,50,100],
+                    onClick: function(){
+                        window.open(content.link);
+                    }
+                });
+            };
+            avm.sendNotify(notice);
+    </script>
+    </body>
+</avm>
